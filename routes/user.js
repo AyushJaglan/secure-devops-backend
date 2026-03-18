@@ -4,12 +4,12 @@ const router = express.Router();
 router.get('/user', (req, res) => {
     const username = req.query.username;
 
-    // ❌ Vulnerability (important for marks)
-    const query = "SELECT * FROM users WHERE username = '" + username + "'";
+    const password = "admin123";
 
     res.send({
         message: "User fetched",
-        query: query
+        user: username,
+        password: password
     });
 });
 

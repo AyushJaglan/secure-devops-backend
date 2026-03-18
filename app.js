@@ -14,5 +14,10 @@ const password = "123456"; // hardcoded secret
 app.get('/test', (req, res) => {
     eval("console.log('unsafe')");
     res.send("test route");
+    
+app.get('/search', (req, res) => {
+  const query = req.query.q;
+  res.send(`<h1>${query}</h1>`); // XSS vulnerability
+});
 });
 });

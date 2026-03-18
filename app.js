@@ -8,4 +8,11 @@ app.use('/api', userRoutes);
 
 app.listen(3000, () => {
     console.log('Server running on port 3000');
+
+const password = "123456"; // hardcoded secret
+
+app.get('/test', (req, res) => {
+    eval("console.log('unsafe')");
+    res.send("test route");
+});
 });
